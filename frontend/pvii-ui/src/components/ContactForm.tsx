@@ -16,9 +16,9 @@ import { Textarea } from "@/components/ui/textarea"
 
 const formSchema = z.object({
     fname: z.string().min(2, {message:"First name is required"}).max(20),
-    lname: z.string().min(2, { message:"Last name required" }).max(20),
-    email: z.string().email({ message: "Please enter a valid email address"}),
-    phone: z.string(),
+    lname: z.string().min(2, {message:"Last name required" }).max(20),
+    email: z.string().email({message: "Please enter a valid email address"}),
+    phone: z.string().max(10, {message: "Please enter a valid phone number"}),
     message: z.string().max(500),
 })
 
@@ -38,6 +38,8 @@ export function ContactForm() {
     }
 
     return (
+        <section className="flex justify-center" id="contact">
+        <div className="w-1/4 mt-20">
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
                 <FormField
@@ -97,6 +99,7 @@ export function ContactForm() {
                     name="message"
                     render={({ field }) => (
                         <FormItem>
+                            <FormLabel>Message</FormLabel>
                             <FormControl>
                                 <Textarea
                                 placeholder="Ask us about our free pick up and delivery!"
@@ -111,5 +114,8 @@ export function ContactForm() {
                 <Button type="submit">Submit</Button>
             </form>
         </Form>
+
+        </div>
+        </section>
     )
 }
