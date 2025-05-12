@@ -9,16 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-button text-maintext hover:bg-transparent hover:border-[3px] hover:border-button",
+        default: "bg-button text-maintext hover:bg-maintext hover:border-[3px] hover:border-maintext hover:text-background",
         ghost: "hover:text-background hover:text-accent-foreground",
         none: "hover:none",
         link: "text-primary underline-offset-4 hover:underline",
-        icon: "bg-transparent border-2 border-button rounded-3xl flex items-center "
+        icon: "bg-transparent border-2 border-button rounded-3xl flex items-center ",
+        border: "bg-transparent text-maintext hover:bg-maintext hover:border-maintext hover:text-background border-[3px] border-button",
       },
       size: {
-        default: "h-[50px] w-[180px] text-[22px] rounded-3xl",
-        sm: "h-[40px] w-[125px] text-lrg rounded-3xl",
-        med: "h-[40px] w-[150px] text-[18px] rounded-3xl",
+        default: "h-[50px] w-[190px] text-[22px] rounded-3xl",
+        sm: "h-[40px] w-[150px] text-lrg rounded-2xl",
+        med: "h-[50px] w-[170px] text-[17px] rounded-2xl",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",
       },

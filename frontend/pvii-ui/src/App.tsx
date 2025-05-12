@@ -1,9 +1,9 @@
 import './index.css'
 import { NavBar } from './components/NavBar'
 import { ContactForm } from './components/ContactForm'
-import MainCard from './components/MainCard'
+import WhyUs from './components/WhyUs'
 import { ThemeProvider } from "@/components/theme-provider"
-import ServiceCarousel from './components/ServiceCarousel'
+import Services from './components/Services'
 import LandingPage from './components/LandingPage'
 import Footer from './components/Footer'
 import PickUp from './components/PickUp'
@@ -16,8 +16,8 @@ function App() {
         <NavBar />
         <main >
           <LandingPage />
-          <MainCard />
-          <ServiceCarousel />
+          <WhyUs />
+          <Services />
           <PickUp />
           <ContactForm />
           <Footer />

@@ -20,7 +20,8 @@ export default {
         button: 'hsl(var(--button))',
         fresh: 'hsl(var(--fresh-text))',
         card: 'hsl(var(--card))',
-        lighBack: 'hsl(var(--light-background))',
+        lightBack: 'hsl(var(--light-background))',
+        lightBorder: 'hsl(var(--lite-border))',
         maintext: 'hsl(var(--main-text))',
         popover: {
           DEFAULT: 'hsl(var(--popover))',
@@ -61,7 +62,12 @@ export default {
       },
       fontFamily: {
         cursive: ['Playwrite MX', 'cursive'],
-        sans: ['Poppins', 'sans-serif']
+        sans: ['Poppins', 'sans-serif'],
+        serif: ['Lora', 'serif'],
+        sansserif: ['Montserrat', 'caps'],
+      },
+      backgroundImage: {
+        'cloth': "url('./assets/cloth.jpg')",
       }
     }
   },

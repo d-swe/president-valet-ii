@@ -1,7 +1,7 @@
 import "./LandingPage.css";
-import arrow from "../assets/arrow.png";
 import { Button } from "./ui/button";
-import FadeInWhenVisible from "@/transitions";
+import FadeIn from "@/transitions";
+import arrow from "../assets/arrow.png"
 
 function LandingPage() {
   const sectionScroll = (href: string) => {
@@ -11,55 +11,74 @@ function LandingPage() {
 
   return (
     <>
-      <section className="px-[200px] pt-[80px] pb-[40px] scroll-mt-[100px]" id="home">
-        <div className="home-container">
-          <FadeInWhenVisible duration={1}>
-            <h1 className="font-cursive text-6xl text-maintext"> give your clothes a</h1>
-          </FadeInWhenVisible>
-          <FadeInWhenVisible duration={1.15}>
-            <h1 className="font-sans font-bold text-8xl pl-[30%] text-fresh"> Fresh Start.</h1>
-          </FadeInWhenVisible>
-          <FadeInWhenVisible duration={1.25}>
-            <p className="text-3xl pl-[30%] text-maintext">
-              Breathe life back into your favorite clothes and make it feel like
-              you're wearing it for the first time. Let our experts get rid of
-              those stubborn stains or tailor the perfect fit to always look your
-              best.
-            </p>
-          </FadeInWhenVisible>
-          <div className="pl-[30%] py-6">
-            <Button size="default" >
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  sectionScroll("#contact");
-                }}
-              >
-                Contact Us
-              </a>
-            </Button>
+      <section className="flex flex-col items-center pt-[5rem] pl-[10%] pb-[2.5px] scroll-mt-[100px] pr-[10%]" id="home">
+        <div className="flex flex-row">
+          <div className="flex flex-col w-[1000px] home-container">
+            <FadeIn duration={1.15}>
+              <h1 className="font-cursive text-7xl text-maintext z-50"> give your clothes a</h1>
+            </FadeIn>
+            <FadeIn duration={1.25}>
+              <h1 className="font-sansserif font-bold text-9xl pt-[1%] pl-[21%] text-fresh"> Fresh Start.</h1>
+            </FadeIn>
+            <FadeIn duration={1.35}>
+              <p className="font-sansserif text-2xl pl-[21.9%] text-maintext">
+                With over 20 years of experience, we treat every garment with expert care. Our mission is to make your clothes<br /> feel as fresh as the day you bought them.
+              </p>
+            </FadeIn>
+            <FadeIn duration={1.45}>
+              <div className="flex flex-row gap-6 pl-[21.9%] pt-6">
+                <Button size="med" variant="border" className="font-sansserif">
+                  <a
+                    href="#about"
+                    className="font-semibold"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      sectionScroll("#about");
+                    }}
+                  >
+                    LEARN MORE
+                  </a>
+                </Button>
+                <Button size="med" className="font-sansserif">
+                  <a
+                    href="#contact"
+                    className="font-semibold"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      sectionScroll("#contact");
+                    }}
+                  >
+                    CONTACT US
+                  </a>
+                </Button>
+              </div>
+            </FadeIn>
           </div>
+          {/* <div className="absolute top-0 right-0"> */}
+          {/*   <FadeIn duration={1.45}> */}
+          {/*     <img src={alter} className="h-[1050px] w-[900px]" /> */}
+          {/*   </FadeIn> */}
+          {/* </div> */}
         </div>
+        <FadeIn duration={1.5} delay={0.5} yOffset={-50}>
+          <div className="choose-title-container pt-[5rem]">
+            <img src={arrow} className="choose-title-img" />
+            <div className="choose-title">
+              <Button variant={"none"} className="bg-transparent font-cursive ml-14 mt-6 text-maintext text-3xl hover:text-fresh">
+                <a
+                  href="#choose"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    sectionScroll("#whyus");
+                  }}
+                > Why Choose Us?
+                </a>
+              </Button>
+            </div>
+          </div>
+        </FadeIn >
       </section >
 
-      <FadeInWhenVisible duration={1.5} delay={0.5} yOffset={-50}>
-        <div className="choose-title-container">
-          <img src={arrow} className="choose-title-img" />
-          <div className="choose-title">
-            <Button variant={"none"} className="bg-transparent ml-14 mt-6 text-maintext text-3xl hover:text-fresh">
-              <a
-                href="#choose"
-                onClick={(e) => {
-                  e.preventDefault();
-                  sectionScroll("#whyus");
-                }}
-              > Why Choose Us?
-              </a>
-            </Button>
-          </div>
-        </div>
-      </FadeInWhenVisible >
     </>
   );
 };

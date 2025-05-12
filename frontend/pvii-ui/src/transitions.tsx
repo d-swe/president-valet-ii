@@ -11,12 +11,11 @@ type FadeInProps = {
   variants?: Variants
 }
 
-const FadeInWhenVisible = ({
+const FadeInLeftToRight = ({
   children,
-  // className = "",
-  delay = 0,
+  delay = 0.3,
   duration = 0.5,
-  yOffset = 100,
+  yOffset = -100,
   once = true,
   variants,
 }: FadeInProps) => {
@@ -31,7 +30,6 @@ const FadeInWhenVisible = ({
   return (
     <motion.div
       ref={ref}
-      // className={className}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={variants || defaultVariants}
@@ -42,4 +40,4 @@ const FadeInWhenVisible = ({
   )
 };
 
-export default FadeInWhenVisible;
+export default FadeInLeftToRight;
