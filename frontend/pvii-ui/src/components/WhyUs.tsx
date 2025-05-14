@@ -4,6 +4,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { FadeInVert } from "@/transitions"
 
 type cardDetails = {
   header: string,
@@ -28,16 +29,18 @@ const cardInfo: cardDetails[] = [
 
 export default function WhyUs() {
   return (
-    <section id="whyus" className="bg-lightBack h-screen px-44">
+    <section id="whyus" className="bg-lightBack min-h-screen px-44">
       <h1 className="text-center font-sansserif font-bold text-6xl pt-32 pb-16 text-background">Why choose us?</h1>
       <div className="grid grid-cols-3 justify-center gap-4 pt-[3rem] font-sansserif">
         {cardInfo.map((card, index) => (
-          <Card key={index} className="w-[500px] pl-6 py-6">
-            <CardHeader className="pb-4">
-              <CardTitle style={{ whiteSpace: "pre-line" }} className="font-sansserif text-left font-bold text-background text-4xl pl-8">{card.header}</CardTitle>
-            </CardHeader>
-            <CardDescription className="text-[21px] text-background px-8">{card.description}</CardDescription>
-          </Card>
+          <FadeInVert delay={index * .3}>
+            <Card key={index} className="w-[500px] pl-6 py-6">
+              <CardHeader className="pb-4">
+                <CardTitle style={{ whiteSpace: "pre-line" }} className="font-sansserif text-left font-bold text-background text-4xl pl-8">{card.header}</CardTitle>
+              </CardHeader>
+              <CardDescription className="text-[21px] text-background px-8">{card.description}</CardDescription>
+            </Card>
+          </FadeInVert>
         ))}
       </div>
     </section>

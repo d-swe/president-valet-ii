@@ -1,23 +1,17 @@
 import {
   Body,
-  Button,
   Container,
   Head,
   Hr,
   Html,
   Img,
   Preview,
-  Section,
   Text,
 } from "@react-email/components";
-import * as React from "react";
-import pvii from "../assets/pvii-logo-ws.png"
 
 interface WelcomeEmailProps {
   firstName: string;
 }
-
-const baseUrl = "http://localhost:3000"
 
 export const welcome = ({
   firstName,
@@ -80,20 +74,20 @@ const paragraph = {
   lineHeight: "26px",
 };
 
-const btnContainer = {
-  textAlign: "center" as const,
-};
-
-const button = {
-  backgroundColor: "#5F51E8",
-  borderRadius: "3px",
-  color: "#fff",
-  fontSize: "16px",
-  textDecoration: "none",
-  textAlign: "center" as const,
-  display: "block",
-  padding: "12px",
-};
+// const btnContainer = {
+//   textAlign: "center" as const,
+// };
+//
+// const button = {
+//   backgroundColor: "#5F51E8",
+//   borderRadius: "3px",
+//   color: "#fff",
+//   fontSize: "16px",
+//   textDecoration: "none",
+//   textAlign: "center" as const,
+//   display: "block",
+//   padding: "12px",
+// };
 
 const hr = {
   borderColor: "#cccccc",

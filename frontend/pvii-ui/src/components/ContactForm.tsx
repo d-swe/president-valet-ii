@@ -50,27 +50,32 @@ export function ContactForm() {
   }
 
   return (
-    <section className="flex flex-col items-center pt-52 h-screen bg-background" id="contact">
-      <div className="flex flex-row justify-between w-[800px] p-10 bg-lightBack rounded-3xl">
-        <div className="pr-10">
-          <h1 className="text-4xl pt-2 pb-6 text-background font-medium">Need Help?</h1>
-          <p className="text-background text-lg">We'd love to hear from you!
-            Whether you have any questions about our services, want to inquire about our pickup and delivery service,
-            or any other questions we're here to help. Fill out the form or reach out to us via email or phone. </p>
-          <div>PHONE NUMBER HERE</div>
-          <div>EMAIL HERE</div>
+    <section className="flex flex-col items-center pt-32 h-screen bg-background" id="contact">
+      <div className="flex flex-row justify-between w-[1200px] gap-32 rounded-3xl">
+        <div>
+          <h1 className="text-7xl pt-2 pb-6 text-maintext font-medium">Have questions?</h1>
+          <p className="text-maintext text-xl pt-4 pb-14">We'd love to hear from you!
+            Whether you have questions about our services or want to inquire about our free pickup and delivery service, we're here to help. Fill out the form or reach out to us via email or phone. </p>
+          <div className="flex flex-col gap-6">
+            <a href="mailto:presidentvaletii@gmail.com" className="text-fresh text-xl hover:underline">
+              presidentvaletii@gmail.com
+            </a>
+            <a href="tel:+12022445678" className="text-fresh text-xl hover:underline">
+              (202) 244 - 5678
+            </a>
+          </div>
         </div>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="text-background">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="text-maintext">
             <div>
               <FormField
                 control={form.control}
                 name="fname"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>First Name</FormLabel>
+                    <FormLabel className="text-xl">First Name</FormLabel>
                     <FormControl>
-                      <Input className="bg-foreground w-[350px]" placeholder="First name" {...field} />
+                      <Input className="bg-foreground w-[450px]" placeholder="First name" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -82,7 +87,7 @@ export function ContactForm() {
                 name="lname"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Last Name</FormLabel>
+                    <FormLabel className="text-xl">Last Name</FormLabel>
                     <FormControl>
                       <Input className="bg-foreground" placeholder="Last name" {...field} />
                     </FormControl>
@@ -96,7 +101,7 @@ export function ContactForm() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel className="text-xl">Email</FormLabel>
                     <FormControl>
                       <Input className="bg-foreground" placeholder="email@example.com" {...field} />
                     </FormControl>
@@ -111,7 +116,7 @@ export function ContactForm() {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone</FormLabel>
+                    <FormLabel className="text-xl">Phone</FormLabel>
                     <FormControl>
                       <Input className="bg-foreground" placeholder="555-5555" {...field} />
                     </FormControl>
@@ -126,7 +131,7 @@ export function ContactForm() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Message</FormLabel>
+                    <FormLabel className="text-xl">Message</FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder="Ask us about our free pick up and delivery!"
@@ -139,7 +144,7 @@ export function ContactForm() {
                 )}
               />
             </div>
-            <Button size="med" className="my-10 text-lightBack" type="submit">Submit</Button>
+            <Button size="med" className="my-10 text-xl text-lightBack" type="submit">SUBMIT</Button>
           </form>
         </Form>
       </div>

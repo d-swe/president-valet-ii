@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -8,7 +8,6 @@ import logo from "../assets/pvii-logo-ws.png"
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { motion } from "motion/react";
-import FadeIn from "@/transitions";
 
 interface RouteProps {
   href: string;
@@ -16,10 +15,10 @@ interface RouteProps {
 }
 
 const routeList: RouteProps[] = [
-  // {
-  //   href: "#whyus",
-  //   label: "WE CAN HELP",
-  // },
+  {
+    href: "#whyus",
+    label: "WHY CHOOSE US",
+  },
   {
     href: "#services",
     label: "OUR SERVICES",
@@ -28,10 +27,10 @@ const routeList: RouteProps[] = [
     href: "#pickup",
     label: "PICKUP & DELIVERY",
   },
-  {
-    href: "#about",
-    label: "ABOUT US",
-  },
+  // {
+  //   href: "#about",
+  //   label: "ABOUT US",
+  // },
 ];
 
 export const NavBar = () => {
