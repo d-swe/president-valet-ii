@@ -50,13 +50,13 @@ export function ContactForm() {
   }
 
   return (
-    <section className="flex flex-col items-center pt-32 h-screen bg-background" id="contact">
-      <div className="flex flex-row justify-between w-[1200px] gap-32 rounded-3xl">
-        <div>
-          <h1 className="text-7xl pt-2 pb-6 text-maintext font-medium">Have questions?</h1>
-          <p className="text-maintext text-xl pt-4 pb-14">We'd love to hear from you!
+    <section className="flex flex-col items-center py-12 md:py-32 min-h-screen bg-background" id="contact">
+      <div className="grid grid-cols-1 xl:grid-cols-2 justify-between xl:w-[1200px] lg:w-[800px] gap-32 rounded-3xl">
+        <div className="md:px-10">
+          <h1 className="text-4xl text-center md:text-left md:text-6xl pt-2 pb-6 md:px-4 text-maintext font-medium">Have questions?</h1>
+          <p className="text-maintext text-lg md:text-xl px-4 pt-4 pb-14">We'd love to hear from you!
             Whether you have questions about our services or want to inquire about our free pickup and delivery service, we're here to help. Fill out the form or reach out to us via email or phone. </p>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 px-4">
             <a href="mailto:presidentvaletii@gmail.com" className="text-fresh text-xl hover:underline">
               presidentvaletii@gmail.com
             </a>
@@ -66,7 +66,7 @@ export function ContactForm() {
           </div>
         </div>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="text-maintext">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="text-maintext px-6 md:px-10 lg:px-0 lg:pt-4">
             <div>
               <FormField
                 control={form.control}
@@ -75,7 +75,7 @@ export function ContactForm() {
                   <FormItem>
                     <FormLabel className="text-xl">First Name</FormLabel>
                     <FormControl>
-                      <Input className="bg-foreground w-[450px]" placeholder="First name" {...field} />
+                      <Input className="bg-foreground text-black" placeholder="First name" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -89,7 +89,7 @@ export function ContactForm() {
                   <FormItem>
                     <FormLabel className="text-xl">Last Name</FormLabel>
                     <FormControl>
-                      <Input className="bg-foreground" placeholder="Last name" {...field} />
+                      <Input className="bg-foreground text-black" placeholder="Last name" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -103,7 +103,7 @@ export function ContactForm() {
                   <FormItem>
                     <FormLabel className="text-xl">Email</FormLabel>
                     <FormControl>
-                      <Input className="bg-foreground" placeholder="email@example.com" {...field} />
+                      <Input className="bg-foreground text-black" placeholder="email@example.com" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -118,7 +118,7 @@ export function ContactForm() {
                   <FormItem>
                     <FormLabel className="text-xl">Phone</FormLabel>
                     <FormControl>
-                      <Input className="bg-foreground" placeholder="555-5555" {...field} />
+                      <Input className="bg-foreground text-black" placeholder="555-5555" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -135,7 +135,7 @@ export function ContactForm() {
                     <FormControl>
                       <Textarea
                         placeholder="Ask us about our free pick up and delivery!"
-                        className=" bg-foreground resize-none"
+                        className=" bg-foreground text-black"
                         {...field}
                       />
                     </FormControl>
@@ -144,7 +144,7 @@ export function ContactForm() {
                 )}
               />
             </div>
-            <Button size="med" className="my-10 text-xl text-lightBack" type="submit">SUBMIT</Button>
+            <Button size="sm" className="my-10 text-xl text-lightBack" type="submit">SUBMIT</Button>
           </form>
         </Form>
       </div>
