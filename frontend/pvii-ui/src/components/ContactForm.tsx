@@ -50,7 +50,7 @@ export function ContactForm() {
   }
 
   return (
-    <section className="flex flex-col items-center py-12 md:py-32 min-h-screen bg-background" id="contact">
+    <section className="flex flex-col items-center py-12 md:py-32 min-h-screen bg-background scroll-m-24 lg:scroll-m-[-10px]" id="contact">
       <div className="grid grid-cols-1 xl:grid-cols-2 justify-between xl:w-[1200px] lg:w-[800px] gap-32 rounded-3xl">
         <div className="md:px-10">
           <h1 className="text-4xl text-center md:text-left md:text-6xl pt-2 pb-6 md:px-4 text-maintext font-medium">Have questions?</h1>

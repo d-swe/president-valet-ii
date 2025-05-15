@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -8,7 +9,6 @@ import logo from "../assets/pvii-logo-ws.png"
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { motion } from "motion/react";
-import MobileNavBar from "./MobileNavBar";
 
 interface RouteProps {
   href: string;
@@ -38,6 +38,9 @@ export const NavBar = () => {
   const [activeTab, setActiveTab] = useState("");
   const [showNavbar, setShowNavbar] = useState(true);
   const [prevScroll, setPrevScroll] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   const navbarControl = () => {
     if (window.scrollY > prevScroll) {
@@ -82,7 +85,6 @@ export const NavBar = () => {
                 <a href={route.href} onClick={(e) => { e.preventDefault(); sectionScroll(route.href) }} key={i}>{route.label}</a>
               </NavigationMenuItem>
             ))}
-
           </div>
           <div className="hidden md:flex mr-10">
             <Button size="sm" className="text-md font-sansserif">
@@ -91,9 +93,42 @@ export const NavBar = () => {
           </div>
         </NavigationMenu>
       </motion.header >
-      <header className="lg:hidden">
-        <MobileNavBar></MobileNavBar>
-      </header>
+
+      <nav className="lg:hidden bg-background px-6 py-4 shadow-md fixed w-full z-50">
+        <div className="flex justify-between items-center px-4">
+          <img onClick={(e) => { e.preventDefault(); sectionScroll("#home") }} src={logo} className="w-[2.5rem] py-[.8rem] hover:scale-110 transition duration-300"></img>
+
+          <button className="bg-background z-50" onClick={toggleMenu}>
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
+        {isOpen && (
+          <div className="lg:hidden absolute top-full left-0 w-full bg-background shadow-lg">
+            <ul className="flex flex-col text-center items-center pb-10 font-medium text-lg font-sansserif space-y-6">
+              {routeList.map((route: RouteProps, i) => (
+                <li>
+                  <NavigationMenuItem
+                    key={route.href}
+                    className={`${activeTab === route.href ? "underline decoration-2 decoration-button underline-offset-[8px]" : ""} 
+              text-white text-[1.1rem] font-medium list-none "`}
+                  >
+                    <a href={route.href} onClick={(e) => { toggleMenu(); e.preventDefault(); sectionScroll(route.href) }} key={i}>{route.label}</a>
+                  </NavigationMenuItem>
+                </li>
+              ))}
+              <li>
+                <NavigationMenuItem
+                  className={`${activeTab === "#contact" ? "underline decoration-2 decoration-button underline-offset-[8px]" : ""} 
+              text-white text-[1.1rem] font-medium list-none "`}
+                >
+                  <a href="#contact" onClick={(e) => { toggleMenu(); e.preventDefault(); sectionScroll("contact") }}>CONTACT US</a>
+                </NavigationMenuItem>
+              </li>
+            </ul>
+          </div >
+        )}
+      </nav >
     </>
   );
 }

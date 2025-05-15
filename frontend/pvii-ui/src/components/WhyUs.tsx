@@ -29,7 +29,7 @@ const cardInfo: cardDetails[] = [
 
 export default function WhyUs() {
   return (
-    <section id="whyus" className="bg-lightBack min-h-screen 2xl:px-44 py-12 md:py-24">
+    <section id="whyus" className="bg-lightBack min-h-screen 2xl:px-44 py-12 md:py-24 scroll-m-24 lg:scroll-m-0">
       <h1 className="text-center font-sansserif font-bold text-4xl md:text-6xl text-background">Why choose us?</h1>
       <div className="grid grid-cols-1 xl:grid-cols-3 items-start justify-center md:place-items-center gap-4 pt-12 md:pt-20 lg:pt-32">
         {cardInfo.map((card, index) => (
