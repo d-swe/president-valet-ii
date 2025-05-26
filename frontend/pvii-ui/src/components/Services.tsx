@@ -23,7 +23,7 @@ function Services() {
     { header: 'Household Items', description: 'Keep your home clean and bring in these items: Sheets, Blankets, Comforters, Tableclothes, Curtains, Rugs.', icon: blanket },
     { header: 'Same-Day', description: 'In a rush? If you need clothes dry cleaned last minute, we provide same day services if clothes are dropped off before 930am.', icon: quick },
     { header: 'Press-Only', description: 'If your clothes don\'t need to be cleaned but want a proper touch up to get those wrinkles out, stop by for our press-only services.', icon: press },
-    { header: 'Leather Cleaning', description: 'Bring in your essentials you depend on day after day such as: Dress Shirts, Pants, T-Shirts, Ladies Shirts, any many more.', icon: cow },
+    { header: 'Leather Cleaning', description: 'We partner with experienced leather professionals to get you the best results. Bring in your belts, jackets, skirts and many more.', icon: cow },
     { header: 'Spot Removal', description: 'We\'ve proved time and time again, no stain is a match for our experts here at President Valet II. No extra charge and included with our dry cleaning services.', icon: stain },
     // { header: 'Shoe Repair', description: 'Bring in your essentials you depend on day after day such as: Dress Shirts, Pants, T-Shirts, Ladies Shirts, any many more.' },
   ];

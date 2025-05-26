@@ -96,7 +96,8 @@ export const NavBar = () => {
 
       <nav className="lg:hidden bg-background px-6 py-4 shadow-md fixed w-full z-50">
         <div className="flex justify-between items-center px-4">
-          <img onClick={(e) => { e.preventDefault(); sectionScroll("#home") }} src={logo} className="w-[2.5rem] py-[.8rem] hover:scale-110 transition duration-300"></img>
+          <img onClick={(e) => { toggleMenu(); e.preventDefault(); sectionScroll("#home") }} src={logo} className="w-[2.5rem] py-[.8rem] hover:scale-110 transition duration-300"></img>
+
 
           <button className="bg-background z-50" onClick={toggleMenu}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}

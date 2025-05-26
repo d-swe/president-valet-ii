@@ -53,8 +53,8 @@ export function ContactForm() {
     <section className="flex flex-col items-center py-12 md:py-32 min-h-screen bg-background scroll-m-24 lg:scroll-m-[-10px]" id="contact">
       <div className="grid grid-cols-1 xl:grid-cols-2 justify-between xl:w-[1200px] lg:w-[800px] gap-32 rounded-3xl">
         <div className="md:px-10">
-          <h1 className="text-4xl text-center md:text-left md:text-6xl pt-2 pb-6 md:px-4 text-maintext font-medium">Have questions?</h1>
-          <p className="text-maintext text-lg md:text-xl px-4 pt-4 pb-14">We'd love to hear from you!
+          <h1 className="text-4xl text-center md:text-left md:text-6xl pt-2 pb-6 md:px-4 text-white font-medium">Have questions?</h1>
+          <p className="text-white text-lg md:text-xl px-4 pt-4 pb-14">We'd love to hear from you!
             Whether you have questions about our services or want to inquire about our free pickup and delivery service, we're here to help. Fill out the form or reach out to us via email or phone. </p>
           <div className="flex flex-col gap-6 px-4">
             <a href="mailto:presidentvaletii@gmail.com" className="text-fresh text-xl hover:underline">
@@ -66,7 +66,7 @@ export function ContactForm() {
           </div>
         </div>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="text-maintext px-6 md:px-10 lg:px-0 lg:pt-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="text-white px-6 md:px-10 lg:px-0 lg:pt-4">
             <div>
               <FormField
                 control={form.control}
