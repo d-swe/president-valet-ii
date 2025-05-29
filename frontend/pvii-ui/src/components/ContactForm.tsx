@@ -14,8 +14,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
 const formSchema = z.object({
-  fname: z.string().min(2, { message: "First name is required" }).max(20),
-  lname: z.string().min(2, { message: "Last name required" }).max(20),
+  name: z.string().min(2, { message: "Name is required" }).max(30),
   email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().max(10, { message: "Please enter a valid phone number" }),
   message: z.string().max(500),
@@ -25,8 +24,7 @@ export function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      fname: "",
-      lname: "",
+      name: "",
       email: "",
       message: "",
     },
@@ -34,7 +32,7 @@ export function ContactForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const response = await fetch("http://localhost:8080/contact", {
+      const response = await fetch("https://api.presidentvaletii.com/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values)
@@ -70,26 +68,12 @@ export function ContactForm() {
             <div>
               <FormField
                 control={form.control}
-                name="fname"
+                name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-xl">First Name</FormLabel>
+                    <FormLabel className="text-xl">Name</FormLabel>
                     <FormControl>
-                      <Input className="bg-foreground text-black" placeholder="First name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              /></div>
-            <div className="pt-4">
-              <FormField
-                control={form.control}
-                name="lname"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-xl">Last Name</FormLabel>
-                    <FormControl>
-                      <Input className="bg-foreground text-black" placeholder="Last name" {...field} />
+                      <Input className="bg-foreground text-black" placeholder="Name" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
